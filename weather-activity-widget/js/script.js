@@ -1,7 +1,7 @@
 // "use strict";
 
 const url = "http://api.openweathermap.org/data/2.5/weather?q=";
-const apiKey = "e94a50e2e99555c9694b04842d08a572"; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work
+const apiKey = ""; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work
 
 let state = {};
 let category = "all";

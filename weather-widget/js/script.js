@@ -1,8 +1,8 @@
 // "use strict";
 
 const url = "http://api.openweathermap.org/data/2.5/weather?q=";
-const apiKey = ""; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work
-
+const apiKey = "e94a50e2e99555c9694b04842d08a572"; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work
+//To save the satate of the objects and later updating the DOM
 let state = {};
 let category = "all";
 
@@ -33,11 +33,23 @@ document.querySelector(".forecast-button").addEventListener(
   false
 );
 
-// async function api(location) {
-//   let respons = await fetch(url + location + "&appid=" + apiKey);
-//   let json = await respons.json();
-//   console.log(json);
-// }
+//Update widget with new elements
+let contaioner = document.createElement("div");
+let cityPara = document.createElement("p");
+cityPara.setAttribute("class", "city"); //giving class to cityPara to style it
+cityPara.textContent = state.city; //get city from the state and set it to cityPara as plain text
+
+let condiotnsPara = document.createElement("p");
+//get weather condtion in Celsius from the state and set it to conditionPara as plain text
+//also add unicode for celsius "\u00B0 C / " and Fahrenhite " \u00B0 F / "
+conditionPara.textContent =
+  state.degCInt + "\u00B0 C / " + state.degF + " \u00B0 F / ";
+
+let iconImage = document.createElement("img");
+//adding icon image source to img element
+iconImage.setAttribute("src", state.icon);
+//adding alt attribute for image
+iconImage.setAttribute("alt", state.condition);
 
 function updateUISuccess(response) {
   console.log("success");
@@ -59,3 +71,5 @@ function updateUIFailure() {
   console.log("failed");
   // $(".conditions").text("Weather information unavailable");
 }
+
+function updateWeather() {}

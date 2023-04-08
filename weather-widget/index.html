@@ -1,49 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Activity Forecast</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,600,700" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+  <!--shows the content language -->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Activity Forecast</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header id="home" class="header">
+      <h2 class="headline">Weather Widget Project</h2>
+    </header>
+    <div>
+      <div class="about">
+        <p>
+          <em>Weather Widget</em> is a simple JavaScript project examining
+          basics of JavaScript language such as action listener, fetch/promises,
+          and DOM Manipulation. A user can enter a location in the box and then
+          application gets the forecast for the selected location. This
+          application makes a call to an api provided by
+          <a href="http://api.openweathermap.org/"
+            ><em>"OpenWeatherMap.org"</em></a
+          >
+          And displays the result in Celsius and Fahrenheit and an icon
+          representing the weather condition.All you need for this project is a
+          standard browser (Chrome, Firefox...), a code editor.<br />
+        </p>
+      </div>
+      <div class="instructions">
+        <p>
+          Before you start, get an API key from Open Weather Map: Our forecast
+          data comes from OpenWeatherMap.org which provides a limited amount of
+          data for free which is great for our project. Requests from this
+          service require an API key which is a unique identifier that
+          associates you with a request coming in. To get your key, you need to
+          create an account on the OpenWeatherMap and get your own unique api
+          key. It should be something like this:
+          <code>e94a50e2e99555c9694b04842d08a572</code><br />
+          Follow comments in <code>scriot.js</code> file for better
+          understanding of the project.
+        </p>
+      </div>
+    </div>
+    <hr />
 
-<header id="home" class="header">
-  <h2 class="headline">About this Project</h2>
-  <p>
-    This is a simple project that makes call to an open and free api "OpenWeatherMap.org"<br/> and parses the response in a widgit showing the curreny wether for the picked location
+    <div class="container">
+      <form>
+        <div class="forecast">
+          <h3>Forecast</h3>
+        </div>
+        <label for="location" class="hidden">Location</label>
+        <input id="location" placeholder="Enter location" />
+
+        <div class="button">
+          <input type="submit" value="Get Forecast" class="forecast-button" />
+          <p></p>
+        </div>
+
+        <div class="conditions"></div>
+      </form>
+    </div>
+    <!-- container -->
+
+    <script src="js/script.js"></script>
+  </body>
+  <footer>
     <ul>
-      <li>Source code:<a href="https://github.com/ShirinMjr/javascript-website-sample-project">GitHub Repo</a></li>
-      <li>API URL: http://api.openweathermap.org/data/2.5/weather?q=</li>
+      <li>
+        Source code:<a
+          href="https://github.com/ShirinMjr/javascript-website-sample-project"
+          >GitHub Repo</a
+        >
+      </li>
+      <li>
+        API URL:
+        <a href="http://api.openweathermap.org/data/2.5/weather?q="
+          >http://api.openweathermap.org/data/2.5/weather?q=</a
+        >
+      </li>
     </ul>
-    </p>
-</header>
-  <div class="nav" role="navigation">
-    <div class="container nav-elements">
-      <div class="forecast">
-        <div class="prefs">
-          <form>
-            <h3>Activity Forecast</h3>
-            <div>
-              <label for="location" class="hidden">Location</label>
-              <input id="location" placeholder="Enter location">
-            </div>
-            <div class="button">
-              <input type="submit" value="Get Forecast" class="forecast-button">
-            </div>
-            <div class="conditions"></div>
-            <p></p>
-          </form>  
-        </div><!-- prefs -->
-      </div><!-- forecast -->
-</div>
-</div>
-
-
-<!-- <script src="js/react.js"></script>
-<script src="js/react-dom.js"></script> -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/script.js" ></script>
-</body>
+  </footer>
 </html>

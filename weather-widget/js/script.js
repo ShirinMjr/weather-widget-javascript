@@ -44,14 +44,12 @@ function updateUISuccess(response) {
   const degFInt = Math.floor(degF);
   state = {
     //set the state base on the recived information
-    condition: response.weather[0].main,
-    // getting the icon that comes from openweathermap.org and setting it to icon
-    icon:
-      "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png",
+    condition: response.weather[0].main, // getting the icon that comes from openweathermap.org and setting it to icon
+    icon: "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png",
     degCInt: Math.floor(degCInt),
     degFInt: Math.floor(degFInt),
     city: response.name,
-    description: response.weather[0].description,
+    description: response.weather[0].description
   };
   //find the location where weather condtion supposed to be displayed
   const into = document.querySelector(".conditions");
@@ -69,10 +67,8 @@ function updateUISuccess(response) {
   let weatherDescription = document.createElement("p"); //Creating a p for weather description
   weatherDescription.textContent = state.description; //setting the text content of the weather description
 
-  let iconImage = document.createElement("img");
-  //adding icon image source to img element
-  iconImage.setAttribute("src", state.icon);
-  //adding alt attribute for image
+  let iconImage = document.createElement("img"); //adding icon image source to img element
+  iconImage.setAttribute("src", state.icon); //adding alt attribute for image
   iconImage.setAttribute("alt", state.condition);
   /*
    * Now we're going to build our HTML, the order we append these elements,
@@ -92,6 +88,5 @@ function updateUISuccess(response) {
 
 function updateUIFailure() {
   console.log("failed");
-  document.querySelector(".conditions").textContent =
-    "Weather information unavailable";
+  document.querySelector(".conditions").textContent = "Weather information unavailable";
 }
